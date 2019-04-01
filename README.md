@@ -1,9 +1,9 @@
-# [Sage](https://roots.io/sage/)
+# [Kreativna tovarna](https://starter.kreativnatovarna.si)
+Kreativna tovarna is an extended WordPress starter theme based on [Sage](https://roots.io/sage/), a starter theme with a modern development workflow.
+
 [![Packagist](https://img.shields.io/packagist/vpre/roots/sage.svg?style=flat-square)](https://packagist.org/packages/roots/sage)
 [![devDependency Status](https://img.shields.io/david/dev/roots/sage.svg?style=flat-square)](https://david-dm.org/roots/sage#info=devDependencies)
 [![Build Status](https://img.shields.io/travis/roots/sage.svg?style=flat-square)](https://travis-ci.org/roots/sage)
-
-Sage is a WordPress starter theme with a modern development workflow.
 
 ## Features
 
@@ -50,9 +50,11 @@ During theme installation you will have options to update `style.css` theme head
 themes/your-theme-name/   # → Root of your Sage based theme
 ├── app/                  # → Theme PHP
 │   ├── Controllers/      # → Controller files
+│   ├── kt/               # → Kt extended functions files
 │   ├── admin.php         # → Theme customizer setup
 │   ├── filters.php       # → Theme filters
 │   ├── helpers.php       # → Helper functions
+│   ├── kt.php            # → Kt extended functions
 │   └── setup.php         # → Theme setup
 ├── composer.json         # → Autoloading for `app/` files
 ├── composer.lock         # → Composer lock file (never edit)
