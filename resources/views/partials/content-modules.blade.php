@@ -40,7 +40,7 @@
 		<section class="section-hr">
 			<div class="container-fluid max-width">
 				<div class="row justify-content-center">
-					<div class="col-xl-10">
+					<div class="col-12">
 						<hr style="width: <?php the_sub_field('hr_line_size'); ?>" />
 					</div>
 				</div>

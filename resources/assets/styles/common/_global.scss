@@ -1,3 +1,373 @@
 .max-width {
   max-width: 1600px;
+
+  &.centered {
+    margin: 0 auto;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  letter-spacing: $letter-spacing * 0.25;
+}
+
+// SECTION
+.section {
+  position: relative;
+  padding-top: $spacer * 3;
+  padding-bottom: $spacer * 3;
+
+  .section-title {
+    margin-bottom: $spacer * 2;
+  }
+}
+
+// CAROUSEL
+.section-slider {
+  padding-top: 0;
+}
+
+.slider-content {
+  display: block;
+  position: relative;
+  padding: $spacer $spacer ($spacer * 3);
+  min-height: 255px;
+
+  @include media-breakpoint-up(sm) {
+    min-height: 225px;
+  }
+
+  @include media-breakpoint-up(md) {
+    min-height: 300px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding: ($spacer * 2) ($spacer * 2) ($spacer * 4);
+    min-height: auto;
+  }
+
+  @include media-breakpoint-up(xl) {
+    padding: ($spacer * 3) ($spacer * 3) ($spacer * 9) $spacer;
+  }
+
+  .slider-content-text {
+    .slider-content-subtitle {
+      letter-spacing: $letter-spacing;
+      padding-left: 2px;
+
+      @extend .h6;
+
+      font-size: $font-size-sm * 0.9;
+      text-transform: uppercase;
+      color: $gray-600;
+    }
+  }
+
+  a {
+    display: block;
+    text-decoration: none;
+    opacity: 1;
+
+    &:hover {
+      opacity: 0.875;
+
+      h3 {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &.white {
+    color: $white;
+
+    a {
+      color: $white;
+
+      h3 {
+        color: $white;
+      }
+    }
+  }
+}
+
+.slider-image {
+  opacity: 1;
+
+  &:hover {
+    opacity: 0.95;
+  }
+}
+
+.carousel-item {
+  padding-top: $spacer * 5;
+
+  &::before {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: $spacer * 5;
+    background-color: $white;
+  }
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  top: auto;
+  left: 0;
+  bottom: $spacer * 4;
+  width: $spacer * 3;
+  color: $black;
+  opacity: 1;
+  font-size: $h3-font-size;
+  padding: $spacer;
+
+  @include media-breakpoint-up(lg) {
+    padding: ($spacer * 2) 0;
+  }
+
+  @include media-breakpoint-up(xl) {
+    padding: ($spacer * 2) 0;
+  }
+
+  &.carousel-control-next {
+    left: $spacer * 6;
+  }
+
+  &:hover {
+    color: $black;
+    opacity: 0.5 !important;
+  }
+}
+
+span.counter {
+  display: block;
+  position: absolute;
+  left: $spacer * 3;
+  bottom: $spacer * 5.5;
+  height: $spacer * 3;
+  line-height: $spacer * 3;
+  width: $spacer * 3;
+  text-align: center;
+
+  @extend .h6;
+
+  font-size: $font-size-sm * 0.825;
+
+  @include media-breakpoint-up(lg) {
+    bottom: $spacer * 5.5;
+  }
+
+  .counter-current,
+  .counter-separator,
+  .counter-total {
+    display: inline-block;
+  }
+
+  .counter-current {
+    margin-top: -3px;
+  }
+
+  .counter-total {
+    margin-top: 3px;
+  }
+}
+
+.extra-line {
+  position: absolute;
+  display: block;
+  padding: $spacer * 2;
+  right: $spacer * 2.5;
+  left: $spacer * 8;
+  bottom: $spacer * 4.25;
+}
+
+// GALLERY
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  margin: $spacer auto;
+  max-width: 1600px;
+
+  figure.gallery-item {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    max-width: 50%;
+    flex: 0 0 50%;
+    float: left;
+    padding: 2px;
+    margin: 0;
+
+    @media (min-width: 420px) {
+      max-width: 33.3329%;
+      flex: 0 0 33.3329%;
+    }
+
+    @include media-breakpoint-up(sm) {
+      max-width: 25%;
+      flex: 0 0 25%;
+    }
+
+    @include media-breakpoint-up(md) {
+      max-width: 20%;
+      flex: 0 0 20%;
+    }
+
+    @include media-breakpoint-up(lg) {
+      max-width: 16.6659%;
+      flex: 0 0 16.6659%;
+    }
+
+    @include media-breakpoint-up(xl) {
+      max-width: 12.5%;
+      flex: 0 0 12.5%;
+    }
+
+    @media (min-width: 1600px) {
+      max-width: 11.1109%;
+      flex: 0 0 11.1109%;
+    }
+
+    .gallery-icon {
+      a {
+        img {
+          width: 100%;
+          //min-width: 150px;
+          max-width: 150px;
+          height: auto;
+          opacity: 1;
+        }
+      }
+    }
+
+    &:hover {
+      z-index: 1;
+
+      .gallery-icon {
+        a {
+          img {
+            z-index: 1;
+            opacity: 0.75;
+          }
+        }
+      }
+    }
+  }
+
+  &.gallery-columns-8 {
+    figure.gallery-item {
+      @media (min-width: 1600px) {
+        max-width: 12.5%;
+        flex: 0 0 12.5%;
+      }
+    }
+  }
+
+  &.gallery-columns-7 {
+    figure.gallery-item {
+      @include media-breakpoint-up(xl) {
+        max-width: 20%;
+        flex: 0 0 20%;
+      }
+
+      @media (min-width: 1600px) {
+        max-width: 14.28569%;
+        flex: 0 0 14.28569%;
+      }
+    }
+  }
+
+  &.gallery-columns-6 {
+    figure.gallery-item {
+      @include media-breakpoint-up(xl) {
+        max-width: 20%;
+        flex: 0 0 20%;
+      }
+
+      @media (min-width: 1600px) {
+        max-width: 16.6659%;
+        flex: 0 0 16.6659%;
+      }
+    }
+  }
+
+  &.gallery-columns-5 {
+    figure.gallery-item {
+      @include media-breakpoint-up(xl) {
+        max-width: 25%;
+        flex: 0 0 25%;
+      }
+
+      @media (min-width: 1600px) {
+        max-width: 20%;
+        flex: 0 0 20%;
+      }
+    }
+  }
+
+  &.gallery-columns-4 {
+    figure.gallery-item {
+      @media (min-width: 1600px) {
+        max-width: 25%;
+        flex: 0 0 25%;
+      }
+    }
+  }
+
+  &.gallery-columns-3 {
+    figure.gallery-item {
+      @include media-breakpoint-up(xl) {
+        max-width: 33.3329%;
+        flex: 0 0 33.3329%;
+      }
+
+      @media (min-width: 1600px) {
+        max-width: 33.3329%;
+        flex: 0 0 33.3329%;
+      }
+    }
+  }
+
+  &.gallery-columns-2 {
+    figure.gallery-item {
+      @include media-breakpoint-up(xl) {
+        max-width: 50%;
+        flex: 0 0 50%;
+      }
+    }
+  }
+
+  &.gallery-columns-1 {
+    @include media-breakpoint-up(xl) {
+      max-width: 100%;
+      flex: 0 0 100%;
+    }
+  }
+}
+
+.figure-caption,
+.wp-caption-text {
+  line-height: 1.25em;
+  padding: ($spacer * 0.25) ($spacer * 0.5);
+}
+
+// FONTAWESOME
+.icon::before {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
 }

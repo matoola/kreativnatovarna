@@ -3,6 +3,6 @@
 @section('content')
   @while(have_posts()) @php the_post() @endphp
     @include('partials.content-slider')
-    @include('partials.content-page')
+    <section id="heading" class="section section-home">@include('partials.content-page')</section>
   @endwhile
 @endsection

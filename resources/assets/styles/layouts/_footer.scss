@@ -1,0 +1,56 @@
+footer.content-info {
+  font-size: $font-size-sm * 0.925;
+  color: lighten($gray-600, 20%);
+  background-color: $gray-700;
+
+  .widget {
+    padding-top: $spacer;
+    padding-bottom: $spacer;
+  }
+
+  a {
+    color: lighten($gray-600, 20%);
+
+    &:hover {
+      color: lighten($gray-600, 30%);
+    }
+  }
+
+  h3 {
+    font-size: $h6-font-size;
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing;
+    color: $white;
+    border-top: 1px solid rgba($body-color, 0.25);
+    padding-top: $spacer;
+    margin-bottom: $spacer;
+  }
+
+  p {
+    margin-bottom: $spacer * 0.5;
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+
+    li {
+      margin-bottom: $spacer * 0.5;
+    }
+  }
+}
+
+#colophon {
+  font-size: $font-size-sm;
+  color: lighten($gray-600, 7.5%);
+  background-color: $gray-700;
+
+  a {
+    color: $gray-600;
+
+    &:hover {
+      color: lighten($gray-600, 30%);
+    }
+  }
+}

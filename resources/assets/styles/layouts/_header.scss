@@ -1,7 +1,62 @@
-.banner .nav li {
-  @extend .nav-item;
-}
+header.banner {
+  @include media-breakpoint-up(lg) {
+    padding-top: $spacer * 0.5;
+    padding-bottom: $spacer * 0.5;
+  }
 
-.banner .nav a {
-  @extend .nav-link;
+  a.brand {
+    padding-top: $spacer * 0.25;
+    padding-bottom: $spacer * 0.25;
+    width: 120px;
+
+    img {
+      width: 100%;
+    }
+
+    @include media-breakpoint-up(lg) {
+      width: 180px;
+    }
+  }
+
+  .navbar-nav {
+    li {
+      @extend .nav-item;
+
+      position: relative;
+      font-family: $font-family-sans-serif;
+      text-transform: uppercase;
+      padding-right: $spacer * 3;
+
+      a {
+        @extend .nav-link;
+      }
+
+      &::after {
+        position: absolute;
+        content: "";
+        top: 50%;
+        right: ($spacer * 0.5);
+        width: $spacer * 2;
+        height: 1px;
+        background-color: rgba($gray-600, 0.25);
+
+        @include media-breakpoint-down(md) {
+          right: ($spacer * 0.25);
+          width: $spacer;
+        }
+
+        @include media-breakpoint-down(sm) {
+          display: none;
+        }
+      }
+
+      &:last-child {
+        padding-right: 0;
+
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
 }

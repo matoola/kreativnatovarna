@@ -14,6 +14,64 @@
 }
 
 .search-form .search-submit {
+  width: auto;
+  min-width: auto;
+
   @extend .btn;
   @extend .btn-secondary;
+}
+
+.wpcf7 {
+  background-color: $white;
+
+  @extend .shadow;
+
+  .wpcf7-form {
+    padding: $spacer * 2;
+
+    p {
+      margin-bottom: $spacer * 0.5;
+    }
+
+    label {
+      width: 100%;
+      font-family: $headings-font-family;
+      font-weight: $font-weight-medium;
+      font-size: $font-size-sm * 0.825;
+      padding: ($spacer * 0.75) $spacer;
+      background-color: $gray-100;
+    }
+
+    input,
+    textarea {
+      border: none;
+      font-size: $font-size-sm;
+      background-color: $gray-100;
+      width: 100%;
+    }
+
+    .wpcf7-list-item-label {
+      font-family: $headings-font-family;
+      font-weight: $font-weight-medium;
+      font-size: $font-size-sm;
+    }
+
+    textarea {
+      height: 150px;
+    }
+
+    input {
+      &.wpcf7-submit {
+        width: auto;
+
+        @extend .btn;
+        @extend .btn-primary;
+      }
+    }
+
+    div.wpcf7-response-output {
+      font-size: $font-size-sm;
+      margin: 0;
+    }
+  }
 }

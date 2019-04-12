@@ -46,13 +46,56 @@
 				endif; ?>
 				
 				<?php if ( $query1->have_posts() ) : while ( $query1->have_posts() ) : $query1->the_post(); ?>
-				<div class="col-lg-3">
-						<article class="post post-<?php echo $posttype; ?>">
-								<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium', array('class' => 'img-fluid')); ?></a>
-								<h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-								<p><?php echo get_the_excerpt(); ?></p>
-						</article> 	 	
-				</div>		
+
+				@if ($postnum == '1')
+					<div class="col-lg-12">
+						<article @php post_class('h-100 post-grid post-featured') @endphp>
+							<div class="row">
+								<div class="col-lg-6 col-xl-7 order-lg-2">
+									@if (has_post_thumbnail())
+									<a class="entry-image" href="{{ get_permalink() }}" title="{{ the_title() }}">
+										{{ the_post_thumbnail('medium_large', array( 'class' => 'img-fluid w-100' ) ) }}
+									</a>
+									@else
+									<a class="entry-image" href="{{ get_permalink() }}" title="{{ the_title() }}">
+										<img class="img-fluid w-100" src="@asset('images/placeholder.svg')">
+									</a>
+									@endif
+								</div>
+								<div class="col-lg-6 col-xl-5 order-lg-1">
+									<div class="entry-item">
+										<header>
+											@include('partials/entry-meta')
+											<h2 class="entry-title pt-2 pb-1"><a href="{{ get_permalink() }}" title="{{ the_title() }}">{{ the_title() }}</a></h2>
+										</header>
+										{{ the_excerpt() }}
+									</div>
+								</div>
+							</div>
+						</article>
+					</div>
+				@else 
+					<div class="col-sm-6 col-lg-4">
+						<article @php post_class('h-100 post-grid post') @endphp>
+							@if (has_post_thumbnail())
+							<a class="entry-image" href="{{ get_permalink() }}" title="{{ the_title() }}">
+								{{ the_post_thumbnail('medium_large', array( 'class' => 'img-fluid w-100' ) ) }}
+							</a>
+							@else
+							<a class="entry-image" href="{{ get_permalink() }}" title="{{ the_title() }}">
+								<img class="img-fluid w-100" src="@asset('images/placeholder.svg')">
+							</a>
+							@endif
+							<div class="entry-item">
+								<header>
+									@include('partials/entry-meta')
+									<h2 class="entry-title pt-2 pb-1"><a href="{{ get_permalink() }}" title="{{ the_title() }}">{{ the_title() }}</a></h2>
+								</header>
+								{{ the_excerpt() }}
+							</div>
+						</article>
+					</div>
+					@endif
 				<?php endwhile; wp_reset_postdata(); endif; ?>	
 
 			</div>

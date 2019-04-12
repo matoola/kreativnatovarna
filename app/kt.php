@@ -11,7 +11,7 @@ use Roots\Sage\Template\BladeProvider;
  * 1) Theme global setup
  */
 function KtSetup() {
-	$kt['google_font'] = 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700&amp;subset=latin-ext'; // Google Fonts
+	$kt['google_font'] = 'https://fonts.googleapis.com/css?family=Rubik:500,500i&amp;subset=latin-ext'; // Google Fonts
 	$kt['sidebar'] = FALSE; // TRUE or FALSE
 	$kt['breadcrumbs'] = FALSE; // TRUE or FALSE
 	$kt['comments'] = FALSE; // TRUE or FALSE
@@ -23,12 +23,12 @@ function KtSetup() {
  * 2) Image max size on upload (removes larger images)
  */
 function KtImages() {
-	$kt['width'] = 1900; // Number/get_option( 'large_size_w' ) or FALSE
-	$kt['height'] = 1900;  // Number/get_option( 'large_size_h' ) or FALSE
+	$kt['width'] = get_option( 'large_size_w' ); // Number/get_option( 'large_size_w' ) or FALSE
+	$kt['height'] = get_option( 'large_size_h' );  // Number/get_option( 'large_size_h' ) or FALSE
 	$kt['quality'] = 88; // Number or FALSE
 	$kt['admin_width'] = 1900;
 	$kt['admin_height'] = 1900;
-	$kt['admin_quality'] = 88;
+	$kt['admin_quality'] = 92;
 	return $kt;
 }
 	

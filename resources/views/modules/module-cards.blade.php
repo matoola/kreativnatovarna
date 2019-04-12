@@ -46,7 +46,7 @@
 			<div class="row justify-content-center <?php echo $cards_type; ?>-wrap">
 				<?php if( have_rows('cards_repeater') ): ?>
 				<?php while ( have_rows('cards_repeater') ) : the_row(); ?>
-					<article class="col-sm-6 col-md-4 col-xl-3 text-center">
+					<article class="col-sm-6 col-md-4 text-center">
 						<div class="card h-100">
 							<?php if(get_sub_field('cards_icon')) :	?>
 								<span class="card-icon p-3"><i class="<?php the_sub_field('cards_icon'); ?> fa-4x"></i></span>
@@ -65,17 +65,17 @@
 
 			@elseif ($cards_type == 'article-team')
 
-			<div class="row justify-content-center <?php echo $cards_type; ?>-wrap">
+			<div class="row justify-content-start <?php echo $cards_type; ?>-wrap">
 				<?php if( have_rows('cards_repeater') ): ?>
 				<?php while ( have_rows('cards_repeater') ) : the_row(); ?>
 					<article class="col-sm-6 col-md-4 col-xl-3 text-center">
 						<div class="card h-100">
 							<?php if(get_sub_field('cards_image')) :
 									$image = get_sub_field('cards_image');
-									$size = 'medium_large';
+									$size = 'medium';
 									$thumb = $image['sizes'][ $size ];
 								?>
-								<span class="card-image" style="background-image: url('<?php echo $thumb; ?>');"></span>
+								<img class="card-img-top" src="<?php echo $thumb; ?>" <?php if(get_sub_field('cards_title')) : ?>alt="<?php the_sub_field('cards_title'); ?>"<?php endif; ?>>
 							<?php endif; ?>
 							<div class="card-body">
 								<?php if(get_sub_field('cards_title')) : ?>
