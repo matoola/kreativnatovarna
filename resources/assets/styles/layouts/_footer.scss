@@ -1,7 +1,7 @@
 footer.content-info {
   font-size: $font-size-sm * 0.925;
-  color: lighten($gray-600, 20%);
-  background-color: $gray-700;
+  color: $gray-600;
+  background: linear-gradient(to bottom, #f6f5f4 0%, #eeebe9 100%);
 
   .widget {
     padding-top: $spacer;
@@ -9,10 +9,10 @@ footer.content-info {
   }
 
   a {
-    color: lighten($gray-600, 20%);
+    color: $gray-600;
 
     &:hover {
-      color: lighten($gray-600, 30%);
+      color: lighten($gray-600, 10%);
     }
   }
 
@@ -20,8 +20,6 @@ footer.content-info {
     font-size: $h6-font-size;
     text-transform: uppercase;
     letter-spacing: $letter-spacing;
-    color: $white;
-    border-top: 1px solid rgba($body-color, 0.25);
     padding-top: $spacer;
     margin-bottom: $spacer;
   }
@@ -44,13 +42,12 @@ footer.content-info {
 #colophon {
   font-size: $font-size-sm;
   color: lighten($gray-600, 7.5%);
-  background-color: $gray-700;
 
   a {
     color: $gray-600;
 
     &:hover {
-      color: lighten($gray-600, 30%);
+      color: lighten($gray-600, 10%);
     }
   }
 }

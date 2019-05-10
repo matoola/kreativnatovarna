@@ -9,7 +9,7 @@
     ]
   },
   "publicPath": "/wp-content/themes/kreativnatovarna",
-  "devUrl": "http://motovila.kt",
+  "devUrl": "http://stilles.kt",
   "proxyUrl": "http://localhost:3000",
   "cacheBusting": "[name]_[hash:8]",
   "watch": [

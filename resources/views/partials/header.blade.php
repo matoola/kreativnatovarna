@@ -7,10 +7,9 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         @if (has_nav_menu('primary_navigation'))
-          {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'container' => false, 'menu_class' => 'navbar-nav mx-auto text-center text-lg-left']) !!}
+          {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'container' => false, 'menu_class' => 'navbar-nav ml-auto text-center text-lg-left']) !!}
         @endif
-        <div class="search-form">{!! get_search_form(false) !!}</div>
-        <div class="lang">SI | EN</div>
+        <div class="lang">SI</div>
       </div>
     </nav>
   </div>

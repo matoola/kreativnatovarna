@@ -21,28 +21,28 @@ $white: 			                #fff;
 $black:				                #000;
 
 // Create grayscale
-$gray-100:			              #f8f8f8;
-$gray-300:			              #f3f3f3;
-$gray-600:			              #666;
-$gray-700:			              #3d3d3d;
+$gray-100:			              #f8f8f7;
+$gray-600: 			              #7b8686;
 
-$primary:			                  $black;
+$primary:			                #ac9c8f;
+$primary-dark:   	            #20170e;
+$red:				                  #891c2e;
+$darkred:			                  darken($red, 13.5%);
 
 // Body
 $body-bg:       		            $white;
-$body-color:                    $gray-600;
+$body-color:                    $primary-dark;
 
 // Fonts
-$font-family-sans-serif:	      "Rubik", sans-serif;
-$font-family-sans-serif-2:	    Tahoma, sans-serif;
+$font-family-sans-serif:				"Futura", Verdana, sans-serif;
+
 $headings-font-family:		      $font-family-sans-serif;
-$font-family-base:		          $font-family-sans-serif-2;
+$font-family-base:		          $font-family-sans-serif;
 
-$font-weight-regular:		        400;
+$font-weight-light:		          300;
 $font-weight-medium:            500;
-$font-weight-bold:		          700;
 
-$font-weight-base:              $font-weight-regular;
+$font-weight-base:              $font-weight-light;
 $line-height-base:              1.625;
 
 $font-size-base:		            1rem;
@@ -53,14 +53,33 @@ $headings-color:         	      $primary;
 $letter-spacing:		            0.05em;
 
 // Buttons
-$border-radius:			            2px;
+$border-radius:			            15px;
 
 $btn-font-weight:               $font-weight-medium;
 
-$btn-primary-color:             $white;
-$btn-primary-bg:                $primary;
+$btn-primary-color:             $primary;
+$btn-primary-underline:         $red;
 
-//Porezava fotk:
-// f1: 				                  932 x 524 px
-// f2:				                  508 x 285,75 px
-// f3:				                  300 x 200 px		
+$font-weight-base:              $font-weight-light;
+$line-height-base:              1.625;
+$font-size-base:		            1.125rem;
+
+$headings-font-weight:  	      $font-weight-medium;
+$headings-color:         	      $primary;
+
+$letter-spacing:		            0.2em; // lahko tudi pomanjšaš ce ti je prevec
+$letter-spacing-sm:		          0.1em; // lahko tudi pomanjšaš ce ti je prevec
+
+// Porezava fotk:
+//f1: 				1920 x 733
+//f2:				  770 x 514
+//f3:				  455 x 303 px		
+
+//Gradient na spodnji strani slike pri straneh kjer je img cez celo stran:
+// background: -moz-linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%); /* ff3.6+ */
+// background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0,0,0,0)), color-stop(100%, rgba(0,0,0,1))); /* safari4+,chrome */
+// background: -webkit-linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%); /* safari5.1+,chrome10+ */
+// background: -o-linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%); /* opera 11.10+ */
+// background: -ms-linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%); /* ie10+ */
+// background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%); /* w3c */
+// filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000',GradientType=0 ); /* ie6-9 */ 
