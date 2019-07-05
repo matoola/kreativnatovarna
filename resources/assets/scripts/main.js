@@ -1,6 +1,9 @@
 // import external dependencies
 import 'jquery';
 
+// import fancybox
+import '@fancyapps/fancybox/dist/jquery.fancybox.min';
+
 // Import everything from autoload
 import './autoload/**/*'
 
@@ -13,11 +16,11 @@ import aboutUs from './routes/about';
 // FONT AWESOME: import then needed Font Awesome functionality
 import { library, dom } from '@fortawesome/fontawesome-svg-core';
 // import the Facebook and Twitter icons
-import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { fab } from '@fortawesome/free-brands-svg-icons';
 // import Pro Regular icons
-import { faFilePdf, faFileWord, faFileExcel, faFile, faSearch, faPhone, faCameraRetro, faFileAlt, faEnvelope, faMapMarker, faAngleLeft, faAngleRight } from '@fortawesome/pro-light-svg-icons';
+import { fal } from '@fortawesome/pro-light-svg-icons';
 // add the imported icons to the library
-library.add(faFacebook, faTwitter, faInstagram, faFilePdf, faFileWord, faFileExcel, faFile, faSearch, faPhone, faEnvelope, faCameraRetro, faFileAlt, faMapMarker, faAngleLeft, faAngleRight);
+library.add(fab, fal);
 // tell FontAwesome to watch the DOM and add the SVGs when it detects icon markup
 dom.watch();
 

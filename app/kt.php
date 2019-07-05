@@ -11,7 +11,7 @@ use Roots\Sage\Template\BladeProvider;
  * 1) Theme global setup
  */
 function KtSetup() {
-	$kt['google_font'] = 'https://fonts.googleapis.com/css?family=Rubik:500,500i&amp;subset=latin-ext'; // Google Fonts
+	$kt['google_font'] = 'https://fonts.googleapis.com/css?family=Raleway:300,300i,500,900&amp;subset=latin-ext'; // Google Fonts
 	$kt['sidebar'] = FALSE; // TRUE or FALSE
 	$kt['breadcrumbs'] = FALSE; // TRUE or FALSE
 	$kt['comments'] = FALSE; // TRUE or FALSE

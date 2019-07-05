@@ -9,7 +9,7 @@
     ]
   },
   "publicPath": "/wp-content/themes/kreativnatovarna",
-  "devUrl": "http://stilles.kt",
+  "devUrl": "http://starter.kt",
   "proxyUrl": "http://localhost:3000",
   "cacheBusting": "[name]_[hash:8]",
   "watch": [

@@ -5,4 +5,5 @@
     @include('partials.page-header')
     @include('partials.content-page')
   @endwhile
+  @include('partials.content-modules')
 @endsection

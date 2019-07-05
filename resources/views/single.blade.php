@@ -10,4 +10,5 @@
       </div>
     </div>
   </div>
+  @include('partials.content-modules')
 @endsection

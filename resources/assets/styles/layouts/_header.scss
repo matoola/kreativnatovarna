@@ -1,4 +1,7 @@
 header.banner {
+  z-index: 99;
+  background-color: rgba($white, 0.95);
+
   @extend .shadow-sm;
 
   @include media-breakpoint-up(lg) {
@@ -20,29 +23,17 @@ header.banner {
     }
   }
 
-  .navbar-collapse {
-    @include media-breakpoint-up(lg) {
-      position: absolute;
-      right: 0;
-      bottom: -($spacer * 1.5);
-    }
-  }
-
   .navbar-nav {
     position: relative;
-    background-color: $primary;
-    color: $white;
 
     li {
-      font-size: $font-size-sm * 0.95;
       font-weight: $font-weight-medium;
-      text-transform: uppercase;
       letter-spacing: $letter-spacing;
       margin: 0;
 
       a {
         display: block;
-        color: $white;
+        color: $primary;
         padding: ($spacer * 0.8) ($spacer * 1.5) ($spacer * 0.75);
       }
     }

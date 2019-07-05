@@ -1,0 +1,78 @@
+// CAROUSEL
+.section-slider {
+  padding: 0;
+}
+
+.carousel-item {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  padding-bottom: $spacer * 5;
+
+  &.carousel-item-hover {
+    &:hover {
+      opacity: 0.85;
+    }
+  }
+}
+
+.slider-content {
+  display: block;
+  position: absolute;
+  bottom: $spacer * 2;
+  left: 0;
+  right: 0;
+  width: 100%;
+
+  @extend .max-width;
+  @extend .centered;
+
+  .slider-content-text {
+    padding: ($spacer * 3);
+    min-height: 255px;
+    background-color: rgba($black, 0.875);
+    border-left: 1px solid $white;
+
+    @extend .col-xl-4;
+    @extend .shadow;
+
+    .slider-content-subtitle {
+      letter-spacing: $letter-spacing;
+      padding-left: 2px;
+
+      @extend .h6;
+
+      font-size: $font-size-sm * 0.9;
+      text-transform: uppercase;
+      color: $gray-600;
+    }
+  }
+
+  &.white {
+    color: $white;
+
+    h3 {
+      color: $white;
+    }
+  }
+}
+
+.slider-image {
+  display: block;
+  position: relative;
+  width: 100%;
+  padding-top: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  font-size: $h2-font-size;
+  padding: $spacer;
+
+  &:hover {
+    color: $black;
+    opacity: 0.5 !important;
+  }
+}

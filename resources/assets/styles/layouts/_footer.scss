@@ -1,7 +1,11 @@
 footer.content-info {
   font-size: $font-size-sm * 0.925;
-  color: $gray-600;
-  background: linear-gradient(to bottom, #f6f5f4 0%, #eeebe9 100%);
+  color: $gray-500;
+  background: linear-gradient(to bottom, $gray-900 0%, $black 100%);
+
+  hr {
+    border-color: rgba($gray-500, 0.5);
+  }
 
   .widget {
     padding-top: $spacer;
@@ -9,17 +13,16 @@ footer.content-info {
   }
 
   a {
-    color: $gray-600;
+    color: $gray-500;
 
     &:hover {
-      color: lighten($gray-600, 10%);
+      color: lighten($gray-500, 10%);
     }
   }
 
   h3 {
+    color: $white;
     font-size: $h6-font-size;
-    text-transform: uppercase;
-    letter-spacing: $letter-spacing;
     padding-top: $spacer;
     margin-bottom: $spacer;
   }
@@ -41,13 +44,13 @@ footer.content-info {
 
 #colophon {
   font-size: $font-size-sm;
-  color: lighten($gray-600, 7.5%);
+  color: darken($gray-500, 7.5%);
 
   a {
-    color: $gray-600;
+    color: darken($gray-500, 7.5%);
 
     &:hover {
-      color: lighten($gray-600, 10%);
+      color: darken($gray-500, 10%);
     }
   }
 }

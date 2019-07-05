@@ -1,12 +1,13 @@
 <div class="container-fluid">
 	<div class="row justify-content-center">
 		<div class="col-12 text-center px-0">
-			<?php if(get_sub_field('banner_image')) :
-				$image = get_sub_field('banner_image');
-				$size = 'large';
-				$thumb = $image['sizes'][ $size ];
-				else :
-				$thumb = '';
+			<?php 
+				if(get_sub_field('banner_image')) :
+					$image = get_sub_field('banner_image');
+					$size = 'large';
+					$thumb = $image['sizes'][ $size ];
+				else:
+					$thumb = '';
 				endif;
 			?>
 			<div class="banner-block pt-4 p-3 p-sm-5" style="background-image: url('<?php echo $thumb; ?>')">

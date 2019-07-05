@@ -1,62 +1,46 @@
+<?php
+	$args = array( 
+		'post_type' => 'drsnik', 
+		'posts_per_page' => 5,
+	);
+	$loop = new WP_Query( $args );
+?>
 <section class="section section-slider">
-	<div class="container-fluid">
-		<div class="row justify-content-center">
-			<div class="col-12 px-0">
-				<div id="carouselLatest" class="carousel slide" data-ride="carousel" data-interval="7000">
-					<div class="carousel-inner">
-						<?php
-						$args = array( 
-							'post_type' => 'drsnik', 
-							'posts_per_page' => 8,
-						);
-						$loop = new WP_Query( $args );
-						$i = 0;
-						while ( $loop->have_posts() ) : $loop->the_post(); 
-						?>
-							<div class="carousel-item <?php if($i == 0) { echo 'active'; } ?>" <?php if ( get_field('bg_color') ) : ?>style="background-color:<?php the_field('bg_color'); ?>"<?php endif; ?>>
-								<div class="container-fluid max-width">
-									<div class="row">
-										<div class="col-12 col-md-6 col-lg-7 h-100 pl-md-0 order-md-2">
-											<div class="slider-image">
-												<?php if ( get_field('link') ) : ?><a href="<?php the_field('link'); ?>"><?php endif; ?>
-													<?php the_post_thumbnail('slider', ['class' => 'img-fluid w-100']); ?>
-													<?php if ( get_field('link') ) : ?></a><?php endif; ?>
-											</div>
-										</div>
-										<div class="col-12 col-md-6 col-lg-5 pr-md-0 order-md-1">
-											<div class="slider-content<?php if ( get_field('font_color') == 'white' ) : ?> white<?php endif; ?> h-100">
-												<div class="slider-content-text">
-													<?php if ( get_field('link') ) : ?><a href="<?php the_field('link'); ?>"><?php endif; ?>
-														<?php if ( get_field('subtitle') ) : ?><span class="slider-content-subtitle"><?php the_field('subtitle'); ?></span><?php endif; ?>
-														<h3 class="h2"><?php the_title(); ?></h3>
-														<?php the_excerpt(); ?>
-													<?php if ( get_field('link') ) : ?></a><?php endif; ?>
-												</div>
-												<span class="counter"><span class="counter-current"><?php echo $i+1; ?></span><span class="counter-separator">/</span><span class="counter-total"></span></span>
-												<a class="carousel-control-prev" href="#carouselLatest" role="button" data-slide="prev">
-													<i class="fal fa-angle-left"></i>
-													<span class="sr-only">Previous</span>
-												</a>
-												<a class="carousel-control-next" href="#carouselLatest" role="button" data-slide="next">
-													<i class="fal fa-angle-right"></i>
-													<span class="sr-only">Next</span>
-												</a>
-												<span class="extra-line"><hr></span>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>	
-							
-						<?php
-						$i++;
-						endwhile; ?>
-						<?php
-						wp_reset_query();
-						?>
+	<div id="carouselHome" class="carousel slide" data-ride="carousel" data-interval="7000">
+		<ol class="carousel-indicators">
+			<?php	$ii = 0; while ( $loop->have_posts() ) : $loop->the_post(); ?>
+				<li data-target="#carouselHome" data-slide-to="<?php echo $ii; ?>"<?php if($ii === 0) { echo ' class="active"'; } ?>></li>
+			<?php	$ii++; endwhile; ?>
+		</ol>
+		<div class="carousel-inner">
+		<?php	$i = 0; while ( $loop->have_posts() ) : $loop->the_post(); ?>
+				<div class="carousel-item<?php if($i == 0) { echo ' active'; } ?><?php if ( get_field('link') ) : echo ' carousel-item-hover'; endif; ?>">
+				<?php if ( get_field('link') ) : ?><a href="<?php the_field('link'); ?>"><?php endif; ?>	
+					<div class="slider-image" style="background-image: url('<?php the_post_thumbnail_url('slider'); ?>');"></div>
+						<div class="slider-content<?php if ( get_field('font_color') === 'white' ) : echo ' white'; endif; ?>">
+
+							<?php
+								$hex = get_field('bg_color');
+								list($r, $g, $b) = sscanf($hex, "#%02x%02x%02x");
+							?>
+
+							<div class="slider-content-text" <?php if ( get_field('bg_color') ) : ?>style="background-color:rgba(<?php echo $r.', '.$g.', '.$b; ?>, 0.875);"<?php endif; ?>>
+								<?php if ( get_field('subtitle') ) : ?><span class="slider-content-subtitle"><?php the_field('subtitle'); ?></span><?php endif; ?>
+								<h3 class="h2"><?php the_title(); ?></h3>
+								<?php the_excerpt(); ?>
+							</div>
+						</div>
 					</div>
-				</div>
-			</div>
-		</div>
+				<?php if ( get_field('link') ) : ?></a><?php endif; ?>
+			<?php	$i++; endwhile; ?>
+			<a class="carousel-control-prev" href="#carouselHome" role="button" data-slide="prev">
+				<i class="fal fa-angle-left"></i>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="carousel-control-next" href="#carouselHome" role="button" data-slide="next">
+				<i class="fal fa-angle-right"></i>
+				<span class="sr-only">Next</span>
+			</a>
+			<?php wp_reset_query(); ?></div>
 	</div>
 </section>

@@ -1,5 +1,8 @@
 @import "common/variables";
 
+// Import Fancybox
+@import "~@fancyapps/fancybox/dist/jquery.fancybox.min.css";
+
 /** Import everything from autoload */
 @import "./autoload/**/*";
 
@@ -17,6 +20,7 @@
 @import "components/buttons";
 @import "components/comments";
 @import "components/forms";
+@import "components/slider";
 @import "components/wp-classes";
 @import "layouts/header";
 @import "layouts/sidebar";
